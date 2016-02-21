@@ -17,19 +17,19 @@
 
 #pragma once
 
-#define TARGET_BOARD_IDENTIFIER "103R"
+#define TARGET_BOARD_IDENTIFIER "103V"
 
 #define LED0_GPIO   GPIOB
-#define LED0_PIN    Pin_3 // PB3 (LED)
+#define LED0_PIN    Pin_13
 #define LED0_PERIPHERAL RCC_APB2Periph_GPIOB
 
 #define LED1_GPIO   GPIOB
-#define LED1_PIN    Pin_4 // PB4 (LED)
+#define LED1_PIN    Pin_14
 #define LED1_PERIPHERAL RCC_APB2Periph_GPIOB
 
-#define LED2_GPIO   GPIOD
-#define LED2_PIN    Pin_2 // PD2 (LED) - Labelled LED4
-#define LED2_PERIPHERAL RCC_APB2Periph_GPIOD
+#define LED2_GPIO   GPIOB
+#define LED2_PIN    Pin_15
+#define LED2_PERIPHERAL RCC_APB2Periph_GPIOB
 
 #define BEEP_GPIO   GPIOA
 #define BEEP_PIN    Pin_12 // PA12 (Beeper)
@@ -46,8 +46,8 @@
 #define INVERTER_PERIPHERAL RCC_APB2Periph_GPIOB
 #define INVERTER_USART USART2
 
-#define USE_SPI
-#define USE_SPI_DEVICE_2
+//#define USE_SPI
+//#define USE_SPI_DEVICE_2
 
 #define PORT103R_SPI_INSTANCE     SPI2
 #define PORT103R_SPI_CS_GPIO      GPIOB
@@ -73,8 +73,8 @@
 //#define USE_GYRO_L3GD20
 //#define USE_GYRO_MPU3050
 #define USE_GYRO_MPU6050
-#define USE_GYRO_SPI_MPU6000
-#define USE_GYRO_SPI_MPU6500
+//#define USE_GYRO_SPI_MPU6000
+//#define USE_GYRO_SPI_MPU6500
 
 #define ACC
 #define USE_FAKE_ACC
@@ -82,8 +82,8 @@
 //#define USE_ACC_BMA280
 //#define USE_ACC_MMA8452
 #define USE_ACC_MPU6050
-#define USE_ACC_SPI_MPU6000
-#define USE_ACC_SPI_MPU6500
+//#define USE_ACC_SPI_MPU6000
+//#define USE_ACC_SPI_MPU6500
 
 #define BARO
 #define USE_BARO_MS5611
@@ -91,13 +91,14 @@
 
 #define MAG
 #define USE_MAG_HMC5883
-#define USE_MAG_AK8975
+//#define USE_MAG_AK8975
 
-#define USE_FLASHFS
-#define USE_FLASHTOOLS
-#define USE_FLASH_M25P16
+//#define USE_FLASHFS
+//#define USE_FLASHTOOLS
+//#define USE_FLASH_M25P16
 
 #define BEEPER
+#define BEEPER_INVERTED
 #define LED0
 #define LED1
 #define LED2
@@ -119,26 +120,29 @@
 #define SONAR_TRIGGER_IO            PB0
 #define SONAR_ECHO_IO               PB1
 
+//#define USB_IO
+
+//#define USE_VCP
 #define USE_UART1
 #define USE_UART2
 #define USE_UART3
 #define USE_UART4
 #define USE_UART5
-#define USE_SOFTSERIAL1
-#define USE_SOFTSERIAL2
-#define SERIAL_PORT_COUNT 7
+//#define USE_SOFTSERIAL1
+//#define USE_SOFTSERIAL2
+#define SERIAL_PORT_COUNT 5
 
-#define SOFTSERIAL_1_TIMER TIM3
-#define SOFTSERIAL_1_TIMER_RX_HARDWARE 4 // PWM 5
-#define SOFTSERIAL_1_TIMER_TX_HARDWARE 5 // PWM 6
-#define SOFTSERIAL_2_TIMER TIM3
-#define SOFTSERIAL_2_TIMER_RX_HARDWARE 6 // PWM 7
-#define SOFTSERIAL_2_TIMER_TX_HARDWARE 7 // PWM 8
+//#define SOFTSERIAL_1_TIMER TIM3
+//#define SOFTSERIAL_1_TIMER_RX_HARDWARE 4 // PWM 5
+//#define SOFTSERIAL_1_TIMER_TX_HARDWARE 5 // PWM 6
+//#define SOFTSERIAL_2_TIMER TIM3
+//#define SOFTSERIAL_2_TIMER_RX_HARDWARE 6 // PWM 7
+//#define SOFTSERIAL_2_TIMER_TX_HARDWARE 7 // PWM 8
 
 #define USE_UART1_TX_DMA
 
 #define USE_I2C
-#define I2C_DEVICE (I2CDEV_2)
+#define I2C_DEVICE (I2CDEV_1)
 
 // #define SOFT_I2C // enable to test software i2c
 // #define SOFT_I2C_PB1011 // If SOFT_I2C is enabled above, need to define pinout as well (I2C1 = PB67, I2C2 = PB1011)

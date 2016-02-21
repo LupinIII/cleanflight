@@ -154,6 +154,19 @@ DEVICE_FLAGS = -DSTM32F10X_HD -DSTM32F10X
 
 DEVICE_STDPERIPH_SRC = $(STDPERIPH_SRC)
 
+ifeq ($(TARGET),PORT103RRRR)
+INCLUDE_DIRS := $(INCLUDE_DIRS) \
+		   $(USBFS_DIR)/inc \
+		   $(ROOT)/src/main/vcp
+
+VPATH := $(VPATH):$(USBFS_DIR)/src
+
+DEVICE_STDPERIPH_SRC := $(DEVICE_STDPERIPH_SRC) \
+		   $(USBPERIPH_SRC)
+
+endif
+
+
 else
 # F1 TARGETS
 
@@ -468,7 +481,8 @@ PORT103R_SRC = \
 		   io/flashfs.c \
 		   $(HIGHEND_SRC) \
 		   $(FC_COMMON_SRC) \
-		   $(SYSTEM_SRC)
+		   $(SYSTEM_SRC) #\
+		   $(VCP_SRC)
 
 
 CJMCU_SRC = \
